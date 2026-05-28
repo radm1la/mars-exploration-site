@@ -324,6 +324,24 @@ main.about-mars-main .content {
   flex-direction: column;
   gap: 4rem;
 }
+@media (max-width: 1024px) {
+  main.about-mars-main .content {
+    padding: 3.75rem;
+    gap: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  main.about-mars-main .content {
+    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+}
+@media (max-width: 480px) {
+  main.about-mars-main .content {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+}
 main.about-mars-main .content section.about-hero {
   display: flex;
   align-items: center;
@@ -336,6 +354,17 @@ main.about-mars-main .content section.about-hero p {
   color: var(--main-p-color);
   font-size: 1.25rem;
 }
+@media (max-width: 768px) {
+  main.about-mars-main .content section.about-hero p {
+    font-size: 1.0625rem;
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  main.about-mars-main .content section.about-hero p {
+    font-size: 0.9375rem;
+  }
+}
 main.about-mars-main .content section.about-overview {
   display: flex;
   align-items: center;
@@ -343,8 +372,60 @@ main.about-mars-main .content section.about-overview {
   width: 100%;
   gap: 2.5rem;
 }
+@media (max-width: 1580px) {
+  main.about-mars-main .content section.about-overview {
+    gap: 1.5rem;
+  }
+  main.about-mars-main .content section.about-overview .img-wrapper img {
+    width: 20rem;
+    height: 20rem;
+  }
+  main.about-mars-main .content section.about-overview .planet-stats .stat-card {
+    width: 8.75rem;
+    padding: 0.8125rem;
+  }
+  main.about-mars-main .content section.about-overview .planet-stats .stat-card .stat-value {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 1100px) {
+  main.about-mars-main .content section.about-overview {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main.about-mars-main .content section.about-overview .img-wrapper img {
+    width: 18.75rem;
+    height: 18.75rem;
+  }
+  main.about-mars-main .content section.about-overview .text-wrapper {
+    width: 100%;
+  }
+  main.about-mars-main .content section.about-overview .planet-stats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 1024px) {
+  main.about-mars-main .content section.about-overview {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
 main.about-mars-main .content section.about-overview .img-wrapper img {
   border-radius: 50%;
+}
+@media (max-width: 768px) {
+  main.about-mars-main .content section.about-overview .img-wrapper img {
+    width: 16.25rem;
+    height: 16.25rem;
+  }
+}
+@media (max-width: 480px) {
+  main.about-mars-main .content section.about-overview .img-wrapper img {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
 }
 main.about-mars-main .content section.about-overview .text-wrapper {
   display: flex;
@@ -355,11 +436,27 @@ main.about-mars-main .content section.about-overview .text-wrapper p {
   font-size: 1rem;
   color: var(--main-p-color);
 }
+@media (max-width: 480px) {
+  main.about-mars-main .content section.about-overview .text-wrapper p {
+    font-size: 0.875rem;
+  }
+}
 main.about-mars-main .content section.about-overview .planet-stats {
   display: flex;
   align-items: center;
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+@media (max-width: 1024px) {
+  main.about-mars-main .content section.about-overview .planet-stats {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  main.about-mars-main .content section.about-overview .planet-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 main.about-mars-main .content section.about-overview .planet-stats .stat-card {
   border-radius: 8px;
@@ -370,21 +467,67 @@ main.about-mars-main .content section.about-overview .planet-stats .stat-card {
   width: 10.625rem;
   border: 1px solid var(--card-border-color);
 }
+@media (max-width: 1024px) {
+  main.about-mars-main .content section.about-overview .planet-stats .stat-card {
+    flex: 1;
+    min-width: 7.5rem;
+    width: auto;
+  }
+}
+@media (max-width: 600px) {
+  main.about-mars-main .content section.about-overview .planet-stats .stat-card {
+    width: calc(50% - 0.5rem);
+    flex: none;
+  }
+}
+@media (max-width: 360px) {
+  main.about-mars-main .content section.about-overview .planet-stats .stat-card {
+    width: 100%;
+  }
+}
 main.about-mars-main .content section.about-overview .planet-stats .stat-card .stat-title {
   color: #9ca3af;
   font-size: 0.875rem;
   white-space: nowrap;
+}
+@media (max-width: 480px) {
+  main.about-mars-main .content section.about-overview .planet-stats .stat-card .stat-title {
+    font-size: 0.75rem;
+  }
 }
 main.about-mars-main .content section.about-overview .planet-stats .stat-card .stat-value {
   color: #fff;
   font-size: 1.5rem;
   white-space: nowrap;
 }
+@media (max-width: 480px) {
+  main.about-mars-main .content section.about-overview .planet-stats .stat-card .stat-value {
+    font-size: 1.25rem;
+  }
+}
 main.about-mars-main .content section.about-features {
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 1.5rem;
+  align-items: stretch;
+}
+@media (max-width: 1024px) {
+  main.about-mars-main .content section.about-features {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main.about-mars-main .content section.about-features .feat-card {
+    width: calc(50% - 0.75rem);
+  }
+}
+@media (max-width: 600px) {
+  main.about-mars-main .content section.about-features {
+    flex-direction: column;
+  }
+  main.about-mars-main .content section.about-features .feat-card {
+    width: 100%;
+  }
 }
 main.about-mars-main .content section.about-features .feat-card {
   display: flex;
@@ -395,12 +538,27 @@ main.about-mars-main .content section.about-features .feat-card {
   border: 1px solid var(--card-border-color);
   padding: 1.5625rem;
 }
+@media (max-width: 768px) {
+  main.about-mars-main .content section.about-features .feat-card {
+    padding: 1.25rem;
+  }
+}
 main.about-mars-main .content section.about-features .feat-card i {
   font-size: 2rem;
   color: var(--main-orange);
   margin-bottom: 10px;
 }
+@media (max-width: 480px) {
+  main.about-mars-main .content section.about-features .feat-card i {
+    font-size: 1.625rem;
+  }
+}
 main.about-mars-main .content section.about-features .feat-card p {
   color: var(--main-p-color);
   font-size: 1rem;
+}
+@media (max-width: 480px) {
+  main.about-mars-main .content section.about-features .feat-card p {
+    font-size: 0.875rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
