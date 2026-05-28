@@ -355,6 +355,21 @@ main.about-mars-main {
     flex-direction: column;
     gap: rem(64);
 
+    @media (max-width: 1024px) {
+      padding: rem(60);
+      gap: rem(48);
+    }
+
+    @media (max-width: 768px) {
+      padding: rem(40);
+      gap: rem(40);
+    }
+
+    @media (max-width: 480px) {
+      padding: rem(24);
+      gap: rem(32);
+    }
+
     section.about-hero {
       @include flex-align-center();
       flex-direction: column;
@@ -365,6 +380,15 @@ main.about-mars-main {
         max-width: rem(768);
         color: var(--main-p-color);
         font-size: rem(20);
+
+        @media (max-width: 768px) {
+          font-size: rem(17);
+          max-width: 100%;
+        }
+
+        @media (max-width: 480px) {
+          font-size: rem(15);
+        }
       }
     }
 
@@ -374,9 +398,64 @@ main.about-mars-main {
       width: 100%;
       gap: rem(40);
 
+      @media (max-width: 1580px) {
+        gap: rem(24);
+
+        .img-wrapper img {
+          width: rem(320);
+          height: rem(320);
+        }
+
+        .planet-stats {
+          .stat-card {
+            width: rem(140);
+            padding: rem(13);
+
+            .stat-value {
+              font-size: rem(20);
+            }
+          }
+        }
+      }
+
+      @media (max-width: 1100px) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .img-wrapper img {
+          width: rem(300);
+          height: rem(300);
+        }
+
+        .text-wrapper {
+          width: 100%;
+        }
+
+        .planet-stats {
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+        gap: rem(32);
+      }
+
       .img-wrapper {
         img {
           border-radius: 50%;
+
+          @media (max-width: 768px) {
+            width: rem(260);
+            height: rem(260);
+          }
+
+          @media (max-width: 480px) {
+            width: rem(200);
+            height: rem(200);
+          }
         }
       }
 
@@ -388,13 +467,26 @@ main.about-mars-main {
         p {
           font-size: rem(16);
           color: var(--main-p-color);
+
+          @media (max-width: 480px) {
+            font-size: rem(14);
+          }
         }
       }
 
       .planet-stats {
         @include flex-align-center();
         gap: rem(16);
-        justify-content: space-between;
+        justify-content: flex-start;
+
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
+
+        @media (max-width: 600px) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
 
         .stat-card {
           border-radius: 8px;
@@ -405,16 +497,39 @@ main.about-mars-main {
           width: rem(170);
           @include card-border();
 
+          @media (max-width: 1024px) {
+            flex: 1;
+            min-width: rem(120);
+            width: auto;
+          }
+
+          @media (max-width: 600px) {
+            width: calc(50% - rem(8));
+            flex: none;
+          }
+
+          @media (max-width: 360px) {
+            width: 100%;
+          }
+
           .stat-title {
             color: #9ca3af;
             font-size: rem(14);
             white-space: nowrap;
+
+            @media (max-width: 480px) {
+              font-size: rem(12);
+            }
           }
 
           .stat-value {
             color: #fff;
             font-size: rem(24);
             white-space: nowrap;
+
+            @media (max-width: 480px) {
+              font-size: rem(20);
+            }
           }
         }
       }
@@ -424,6 +539,24 @@ main.about-mars-main {
       @include flex-align-center();
       justify-content: space-around;
       gap: rem(24);
+      align-items: stretch;
+
+      @media (max-width: 1024px) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .feat-card {
+          width: calc(50% - rem(12));
+        }
+      }
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+
+        .feat-card {
+          width: 100%;
+        }
+      }
 
       .feat-card {
         display: flex;
@@ -434,15 +567,27 @@ main.about-mars-main {
         @include card-border();
         padding: rem(25);
 
+        @media (max-width: 768px) {
+          padding: rem(20);
+        }
+
         i {
           font-size: rem(32);
           color: var(--main-orange);
           margin-bottom: 10px;
+
+          @media (max-width: 480px) {
+            font-size: rem(26);
+          }
         }
 
         p {
           color: var(--main-p-color);
           font-size: rem(16);
+
+          @media (max-width: 480px) {
+            font-size: rem(14);
+          }
         }
       }
     }
