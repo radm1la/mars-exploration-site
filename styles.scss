@@ -79,16 +79,32 @@ h4 {
 
 h2 {
   font-size: rem(48);
+
+  @media (max-width: 768px) {
+    font-size: rem(36);
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    font-size: rem(28);
+  }
 }
 
 h3 {
   font-size: rem(24);
   color: #fff;
+
+  @media (max-width: 480px) {
+    font-size: rem(20);
+  }
 }
 
 h4 {
   font-size: rem(20);
   color: #fff;
+
+  @media (max-width: 480px) {
+    font-size: rem(17);
+  }
 }
 
 ul {
@@ -595,10 +611,33 @@ main.missions-main {
   flex-direction: column;
   gap: rem(64);
 
+  @media (max-width: 1200px) {
+    padding: rem(80) rem(80);
+  }
+  @media (max-width: 1024px) {
+    padding: rem(64) rem(48);
+    gap: rem(48);
+  }
+  @media (max-width: 768px) {
+    padding: rem(48) rem(24);
+    gap: rem(40);
+  }
+  @media (max-width: 480px) {
+    padding: rem(40) rem(16);
+    gap: rem(32);
+  }
+
   section.missions-wrapper {
     width: 100%;
     overflow: hidden;
     padding: rem(40) 0;
+
+    @media (max-width: 768px) {
+      padding: rem(24) 0;
+    }
+    @media (max-width: 480px) {
+      padding: rem(16) 0;
+    }
 
     &:hover .missions-track {
       animation-play-state: paused;
@@ -610,6 +649,13 @@ main.missions-main {
       width: max-content;
       animation: missions-scroll 25s linear infinite;
 
+      @media (max-width: 768px) {
+        gap: rem(40);
+      }
+      @media (max-width: 480px) {
+        gap: rem(24);
+      }
+
       .card {
         padding: rem(25);
         display: flex;
@@ -620,6 +666,16 @@ main.missions-main {
         background-color: var(--card-bg);
         width: rem(280);
         position: relative;
+
+        @media (max-width: 768px) {
+          width: rem(240);
+          padding: rem(20);
+        }
+        @media (max-width: 480px) {
+          width: rem(200);
+          padding: rem(16);
+          gap: rem(6);
+        }
 
         &::after {
           content: "";
@@ -662,11 +718,28 @@ main.missions-main {
     align-items: center;
     gap: rem(54);
 
+    @media (max-width: 1024px) {
+      gap: rem(40);
+    }
+    @media (max-width: 768px) {
+      gap: rem(32);
+    }
+    @media (max-width: 480px) {
+      gap: rem(24);
+    }
+
     .cards-wrapper {
       width: 100%;
       display: flex;
       align-items: stretch;
       gap: rem(24);
+
+      @media (max-width: 880px) {
+        flex-wrap: wrap;
+      }
+      @media (max-width: 480px) {
+        gap: rem(16);
+      }
 
       .fut-card {
         padding: rem(30);
@@ -677,13 +750,30 @@ main.missions-main {
         @include card-border();
         background-color: var(--card-bg);
 
+        @media (max-width: 1024px) {
+          flex: 1 1 calc(50% - rem(12));
+          min-width: rem(240);
+        }
+        @media (max-width: 880px) {
+          flex: 1 1 100%;
+        }
+        @media (max-width: 480px) {
+          padding: rem(24);
+          gap: rem(10);
+        }
+
         i {
           color: var(--main-orange);
           font-size: rem(32);
           padding: rem(15);
+
+          @media (max-width: 480px) {
+            font-size: rem(26);
+            padding: rem(10);
+          }
         }
 
-        p{
+        p {
           text-align: center;
         }
       }
