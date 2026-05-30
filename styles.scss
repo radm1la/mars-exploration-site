@@ -27,7 +27,7 @@
   src: url("/assets/fonts/IntelOneMono-VariableFont_wght.ttf");
 }
 
-//GLOBAL STYLES
+//GLOBAL STYLES - MIXINS
 @mixin flex-align-center {
   display: flex;
   align-items: center;
@@ -64,6 +64,27 @@
     font-size: rem(26);
     padding: rem(10);
   }
+}
+
+@mixin main-size-bg {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #080a1a;
+}
+
+@mixin linear-bg-top-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(
+    220deg,
+    rgba(255, 69, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
 }
 
 html,
@@ -293,9 +314,7 @@ nav {
 
 main.home-main {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #080a1a;
+  @include main-size-bg();
 
   .bg-image {
     position: absolute;
@@ -393,23 +412,10 @@ main.home-main {
 // ABOUT MARS PAGES STYLES
 main.about-mars-main {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #080a1a;
+  @include main-size-bg();
 
   .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    inset: 0;
-    background: linear-gradient(
-      220deg,
-      rgba(255, 69, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0) 70%
-    );
+    @include linear-bg-top-right();
   }
 
   .content {
@@ -613,9 +619,7 @@ main.about-mars-main {
 
 //MISSIONS PAGE STYLES
 main.missions-main {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #080a1a;
+  @include main-size-bg();
   padding: rem(80) rem(140);
   display: flex;
   flex-direction: column;
