@@ -336,17 +336,17 @@ main.home-main .content button {
   align-items: center;
   gap: 1rem;
 }
-main.home-main .content button i {
-  transition: all 0.3s ease;
-}
-main.home-main .content button:hover i {
-  transform: translateX(5px);
-}
 @media (max-width: 768px) {
   main.home-main .content button {
     padding: 1rem 1.75rem;
     font-size: 1rem;
   }
+}
+main.home-main .content button i {
+  transition: all 0.3s ease;
+}
+main.home-main .content button:hover i {
+  transform: translateX(5px);
 }
 @media (max-width: 1024px) {
   main.home-main {
@@ -568,13 +568,14 @@ main.about-mars-main .content section.about-features .feat-card {
   }
 }
 main.about-mars-main .content section.about-features .feat-card i {
-  font-size: 2rem;
   color: var(--main-orange);
-  margin-bottom: 10px;
+  font-size: 2rem;
+  padding: 0.9375rem;
 }
 @media (max-width: 480px) {
   main.about-mars-main .content section.about-features .feat-card i {
     font-size: 1.625rem;
+    padding: 0.625rem;
   }
 }
 

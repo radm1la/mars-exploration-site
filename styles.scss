@@ -27,6 +27,7 @@
   src: url("/assets/fonts/IntelOneMono-VariableFont_wght.ttf");
 }
 
+//GLOBAL STYLES
 @mixin flex-align-center {
   display: flex;
   align-items: center;
@@ -35,6 +36,34 @@
 @mixin card-border {
   border: 1px solid var(--card-border-color);
   border-radius: 8px;
+}
+
+@mixin orange-bg-btn-styles {
+  font-size: rem(18);
+  background-color: var(--main-orange);
+  color: #fff;
+  box-shadow: 0 0 rem(10) rgba(255, 69, 0, 0.7);
+  border: none;
+  padding: rem(20) rem(32);
+  border-radius: rem(8);
+  @include flex-align-center();
+  gap: rem(16);
+
+  @media (max-width: 768px) {
+    padding: rem(16) rem(28);
+    font-size: rem(16);
+  }
+}
+
+@mixin orange-icon {
+  color: var(--main-orange);
+  font-size: rem(32);
+  padding: rem(15);
+
+  @media (max-width: 480px) {
+    font-size: rem(26);
+    padding: rem(10);
+  }
 }
 
 html,
@@ -343,15 +372,7 @@ main.home-main {
     }
 
     button {
-      font-size: rem(18);
-      background-color: var(--main-orange);
-      color: #fff;
-      box-shadow: 0 0 rem(10) rgba(255, 69, 0, 0.7);
-      border: none;
-      padding: rem(20) rem(32);
-      border-radius: rem(8);
-      @include flex-align-center();
-      gap: rem(16);
+      @include orange-bg-btn-styles();
 
       i {
         transition: all 0.3s ease;
@@ -359,11 +380,6 @@ main.home-main {
 
       &:hover i {
         transform: translateX(5px);
-      }
-
-      @media (max-width: 768px) {
-        padding: rem(16) rem(28);
-        font-size: rem(16);
       }
     }
   }
@@ -588,13 +604,7 @@ main.about-mars-main {
         }
 
         i {
-          font-size: rem(32);
-          color: var(--main-orange);
-          margin-bottom: 10px;
-
-          @media (max-width: 480px) {
-            font-size: rem(26);
-          }
+          @include orange-icon();
         }
       }
     }
@@ -763,14 +773,7 @@ main.missions-main {
         }
 
         i {
-          color: var(--main-orange);
-          font-size: rem(32);
-          padding: rem(15);
-
-          @media (max-width: 480px) {
-            font-size: rem(26);
-            padding: rem(10);
-          }
+          @include orange-icon();
         }
 
         p {
