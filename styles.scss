@@ -101,6 +101,16 @@
   );
 }
 
+@mixin no-bg-btn{
+  border-radius: 8px;
+  border: 1px solid var(--main-orange);
+  color: var(--main-orange);
+  background: none;
+  font-size: rem(16);
+  padding: rem(12) rem(18);
+}
+
+
 html,
 body {
   height: 100%;
