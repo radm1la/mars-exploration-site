@@ -28,6 +28,20 @@
 }
 
 //GLOBAL STYLES - MIXINS
+@mixin section-gap($gap: rem(64)) {
+  gap: $gap;
+ 
+  @media (max-width: $bp-lg) {
+    gap: rem(48);
+  }
+  @media (max-width: $bp-md) {
+    gap: rem(40);
+  }
+  @media (max-width: $bp-sm) {
+    gap: rem(32);
+  }
+}
+
 @mixin flex-align-center {
   display: flex;
   align-items: center;
@@ -424,21 +438,18 @@ main.about-mars-main {
     padding: rem(80);
     display: flex;
     flex-direction: column;
-    gap: rem(64);
+    @include section-gap();
 
     @media (max-width: 1024px) {
       padding: rem(60);
-      gap: rem(48);
     }
 
     @media (max-width: 768px) {
       padding: rem(40);
-      gap: rem(40);
     }
 
     @media (max-width: 480px) {
       padding: rem(24);
-      gap: rem(32);
     }
 
     section.about-overview {
@@ -620,25 +631,23 @@ main.about-mars-main {
 //MISSIONS PAGE STYLES
 main.missions-main {
   @include main-size-bg();
+  @include section-gap();
   padding: rem(80) rem(140);
   display: flex;
   flex-direction: column;
-  gap: rem(64);
+  
 
   @media (max-width: 1200px) {
     padding: rem(80) rem(80);
   }
   @media (max-width: 1024px) {
     padding: rem(64) rem(48);
-    gap: rem(48);
   }
   @media (max-width: 768px) {
     padding: rem(48) rem(24);
-    gap: rem(40);
   }
   @media (max-width: 480px) {
     padding: rem(40) rem(16);
-    gap: rem(32);
   }
 
   section.missions-wrapper {
@@ -659,16 +668,9 @@ main.missions-main {
 
     .missions-track {
       @include flex-align-center();
-      gap: rem(64);
+      @include section-gap();
       width: max-content;
       animation: missions-scroll 25s linear infinite;
-
-      @media (max-width: 768px) {
-        gap: rem(40);
-      }
-      @media (max-width: 480px) {
-        gap: rem(24);
-      }
 
       .card {
         padding: rem(25);
@@ -730,17 +732,7 @@ main.missions-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: rem(54);
-
-    @media (max-width: 1024px) {
-      gap: rem(40);
-    }
-    @media (max-width: 768px) {
-      gap: rem(32);
-    }
-    @media (max-width: 480px) {
-      gap: rem(24);
-    }
+    @include section-gap(54);
 
     .cards-wrapper {
       width: 100%;
