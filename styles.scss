@@ -28,6 +28,29 @@
 }
 
 //GLOBAL STYLES - MIXINS
+@mixin section-padding() {
+  padding: rem(80) rem(210);
+  @media (max-width: 1400px) {
+    padding: rem(80) rem(120);
+  }
+
+  @media (max-width: 1200px) {
+    padding: rem(80) rem(80);
+  }
+
+  @media (max-width: 1024px) {
+    padding: rem(60) rem(60);
+  }
+
+  @media (max-width: 768px) {
+    padding: rem(40) rem(40);
+  }
+
+  @media (max-width: 480px) {
+    padding: rem(24) rem(16);
+  }
+}
+
 @mixin section-gap($gap: rem(64)) {
   gap: $gap;
 
@@ -50,6 +73,62 @@
 @mixin card-border {
   border: 1px solid var(--card-border-color);
   border-radius: 8px;
+}
+
+@mixin default-card-style {
+  @include card-border();
+  background-color: var(--card-bg);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: rem(20);
+}
+
+@mixin custom-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: rem(16);
+    color: #9ca3af;
+
+    &::before {
+      content: "\f058";
+      font-family: "Font Awesome 7 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--main-orange);
+    }
+  }
+}
+
+@mixin custom-list-2 {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: rem(16);
+    color: var(--main-p-color);
+
+    &::before {
+      content: "\f0a9";
+      font-family: "Font Awesome 7 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--main-orange);
+    }
+  }
 }
 
 @mixin orange-bg-btn-styles {
@@ -460,22 +539,10 @@ main.about-mars-main {
   .content {
     position: relative;
     z-index: 1;
-    padding: rem(80);
     display: flex;
     flex-direction: column;
     @include section-gap();
-
-    @media (max-width: 1024px) {
-      padding: rem(60);
-    }
-
-    @media (max-width: 768px) {
-      padding: rem(40);
-    }
-
-    @media (max-width: 480px) {
-      padding: rem(24);
-    }
+    @include section-padding();
 
     section.about-overview {
       @include flex-align-center();
@@ -634,12 +701,8 @@ main.about-mars-main {
       }
 
       .feat-card {
-        display: flex;
-        flex-direction: column;
-        gap: rem(10);
+        @include default-card-style();
         background-color: rgba($color: #1e1e3c, $alpha: 0.4);
-        @include card-border();
-        padding: rem(25);
 
         @media (max-width: 768px) {
           padding: rem(20);
@@ -657,22 +720,9 @@ main.about-mars-main {
 main.missions-main {
   @include main-size-bg();
   @include section-gap();
-  padding: rem(80) rem(140);
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 1200px) {
-    padding: rem(80) rem(80);
-  }
-  @media (max-width: 1024px) {
-    padding: rem(64) rem(48);
-  }
-  @media (max-width: 768px) {
-    padding: rem(48) rem(24);
-  }
-  @media (max-width: 480px) {
-    padding: rem(40) rem(16);
-  }
+  @include section-padding();
 
   section.missions-wrapper {
     width: 100%;
@@ -697,13 +747,7 @@ main.missions-main {
       animation: missions-scroll 25s linear infinite;
 
       .card {
-        padding: rem(25);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: rem(8);
-        @include card-border();
-        background-color: var(--card-bg);
+        @include default-card-style();
         width: rem(280);
         position: relative;
 
@@ -756,7 +800,7 @@ main.missions-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include section-gap(54);
+    @include section-gap(rem(54));
 
     .cards-wrapper {
       width: 100%;
@@ -772,13 +816,12 @@ main.missions-main {
       }
 
       .fut-card {
-        padding: rem(30);
-        display: flex;
-        flex-direction: column;
+        @include default-card-style();
         align-items: center;
-        gap: rem(12);
-        @include card-border();
-        background-color: var(--card-bg);
+
+        h4 {
+          text-align: center;
+        }
 
         @media (max-width: 1024px) {
           flex: 1 1 calc(50% - rem(12));
@@ -825,30 +868,10 @@ main.virtual-tour-main {
   .content {
     position: relative;
     z-index: 1;
-    padding: rem(80) rem(216);
     display: flex;
     flex-direction: column;
     @include section-gap();
-
-    @media (max-width: 1400px) {
-      padding: rem(80) rem(120);
-    }
-
-    @media (max-width: 1200px) {
-      padding: rem(80) rem(80);
-    }
-
-    @media (max-width: 1024px) {
-      padding: rem(60) rem(60);
-    }
-
-    @media (max-width: 768px) {
-      padding: rem(40) rem(40);
-    }
-
-    @media (max-width: 480px) {
-      padding: rem(24) rem(16);
-    }
+    @include section-padding();
 
     section.map {
       width: 100%;
@@ -956,6 +979,102 @@ main.virtual-tour-main {
       p {
         font-size: 14px;
         color: #9ca3af;
+      }
+    }
+  }
+}
+
+//COLONIZATION PAGES STYLES
+main.colonization-main {
+  @include main-size-bg();
+  @include section-gap();
+  @include section-padding();
+  display: flex;
+  flex-direction: column;
+
+  section.sectors {
+    @include flex-align-center();
+    align-items: stretch;
+    gap: rem(24);
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+
+      .sector-card {
+        flex: 1 1 calc(50% - rem(12));
+      }
+    }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+
+      .sector-card {
+        width: 100%;
+      }
+    }
+
+    .sector-card {
+      @include default-card-style();
+
+      i {
+        @include orange-icon();
+      }
+      ul {
+        @include custom-list();
+      }
+    }
+  }
+
+  section.timelines {
+    @include card-border();
+    @include section-gap(rem(24));
+    display: flex;
+    flex-direction: column;
+    background-color: #0d1126;
+    padding: rem(35);
+    align-items: center;
+
+    @media (max-width: 768px) {
+      padding: rem(24);
+    }
+
+    @media (max-width: 480px) {
+      padding: rem(16);
+    }
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: rem(24);
+
+      @media (max-width: 1024px) {
+        flex-wrap: wrap;
+
+        .time-card {
+          flex: 1 1 calc(50% - rem(12));
+        }
+      }
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+
+        .time-card {
+          width: 100%;
+        }
+      }
+
+      .time-card {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+        h4 {
+          color: var(--main-orange);
+        }
+
+        ul {
+          @include custom-list-2();
+        }
       }
     }
   }
