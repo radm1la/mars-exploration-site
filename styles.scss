@@ -1104,8 +1104,14 @@ main.contact-main {
       gap: rem(24);
       align-items: flex-start;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         flex-direction: column;
+        gap: rem(16);
+
+        section.subscribe-card,
+        .right-col {
+          width: 100%;
+        }
       }
 
       section.subscribe-card {
@@ -1116,6 +1122,16 @@ main.contact-main {
         display: flex;
         flex-direction: column;
         gap: rem(27);
+
+        @media (max-width: 768px) {
+          width: 100%;
+          padding: rem(35) rem(24);
+        }
+
+        @media (max-width: 480px) {
+          padding: rem(24) rem(16);
+          gap: rem(20);
+        }
 
         form {
           display: flex;
@@ -1212,6 +1228,10 @@ main.contact-main {
         flex-direction: column;
         gap: rem(24);
 
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+
         section.community-card {
           @include card-border();
           background-color: #0d1126;
@@ -1219,6 +1239,16 @@ main.contact-main {
           display: flex;
           flex-direction: column;
           gap: rem(27);
+
+          @media (max-width: 768px) {
+            padding: rem(35) rem(24);
+          }
+
+          @media (max-width: 480px) {
+            padding: rem(24) rem(16);
+            gap: rem(20);
+          }
+
           i {
             @include orange-icon();
           }
@@ -1236,6 +1266,11 @@ main.contact-main {
           .program-field {
             display: flex;
             gap: rem(30);
+
+            @media (max-width: 480px) {
+              flex-direction: column;
+              gap: rem(20);
+            }
           }
         }
 
@@ -1247,6 +1282,15 @@ main.contact-main {
           flex-direction: column;
           gap: rem(27);
 
+          @media (max-width: 768px) {
+            padding: rem(35) rem(24);
+          }
+
+          @media (max-width: 480px) {
+            padding: rem(24) rem(16);
+            gap: rem(20);
+          }
+
           button {
             @include orange-bg-btn-styles();
           }
@@ -1256,7 +1300,7 @@ main.contact-main {
             gap: rem(12);
 
             .career-card {
-              background-color: #161B36;
+              background-color: #161b36;
               border-radius: 8px;
               padding: rem(12);
               display: flex;
@@ -1265,6 +1309,10 @@ main.contact-main {
               p {
                 font-size: rem(16);
                 color: #fff;
+
+                @media (max-width: 480px) {
+                  font-size: rem(14);
+                }
               }
               button {
                 @include no-bg-btn();
@@ -1272,6 +1320,114 @@ main.contact-main {
             }
           }
         }
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  background-color: #06071a;
+  display: flex;
+  flex-direction: column;
+  gap: rem(48);
+  @include section-padding();
+
+  .footer-top {
+    display: flex;
+    align-items: stretch;
+    gap: rem(24);
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+
+      .col {
+        flex: 1 1 calc(50% - rem(12));
+      }
+    }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+
+      .col {
+        width: 100%;
+      }
+    }
+
+    .col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: rem(24);
+
+      .socials,
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: rem(19);
+      }
+
+      &.contact-col {
+        i {
+          color: var(--main-orange);
+        }
+      }
+
+      .socials {
+        display: flex;
+        flex-direction: row;
+        gap: rem(12);
+      }
+    }
+    p,
+    a,
+    li {
+      font-size: rem(16);
+      color: #9ca3af;
+
+      @media (max-width: 480px) {
+        font-size: rem(14);
+      }
+    }
+
+    a.logo {
+      color: #fff;
+      font-size: rem(24);
+    }
+  }
+
+  .footer-bottom {
+    color: #9ca3af;
+    font-size: rem(16);
+    border-top: 1px solid #9ca3af;
+    display: flex;
+    justify-content: space-between;
+    padding-top: rem(33);
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+      gap: rem(16);
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      font-size: rem(14);
+    }
+
+    .links {
+      display: flex;
+      gap: rem(19);
+
+      @media (max-width: 480px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: rem(12);
+      }
+
+      a {
+        color: #9ca3af;
       }
     }
   }
