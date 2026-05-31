@@ -544,7 +544,19 @@ main.about-mars-main {
     display: flex;
     flex-direction: column;
     @include section-gap();
-    @include section-padding();
+    padding: rem(80);
+
+    @media (max-width: 1580px) {
+      padding: rem(60);
+    }
+
+    @media (max-width: 1280px) {
+      padding: rem(40);
+    }
+
+    @media (max-width: 768px) {
+      padding: rem(24);
+    }
 
     section.about-overview {
       @include flex-align-center();
