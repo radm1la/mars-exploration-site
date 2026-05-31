@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/png" href="../assets/site-icon.png" />
+    <title>Virtual Tour</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <span class="icon">
+          <img src="../assets/nav_icon.svg" alt="logo" />
+        </span>
+        <a href="../index.html">Mission Mars</a>
+      </div>
+
+      <ul class="menu" id="menu">
+        <li>
+          <a href="about-mars.html">About Mars</a>
+        </li>
+        <li>
+          <a href="missions.html">Missions</a>
+        </li>
+        <li>
+          <a href="#" class="active">Virtual tour</a>
+        </li>
+        <li>
+          <a href="colonization.html">Colonization</a>
+        </li>
+        <li>
+          <a href="contact.html">Join Us</a>
+        </li>
+      </ul>
+
+      <button class="burger">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <main class="virtual-tour-main">
+      <div class="bg"></div>
+      <div class="content">
+        <section class="hero">
+          <h2>VIRTUAL <span>TOUR</span></h2>
+          <p>
+            Explore the most fascinating locations on the Martian surface
+            through our interactive virtual tour.
+          </p>
+        </section>
+        <section class="map">
+          <img src="../assets/Mars Map.svg" alt="mars map" />
+          <button
+            onclick="
+              window.location.href =
+                'https://trek.nasa.gov/mars/#v=0.1&x=0&y=2.842170943040401e-14&z=1&p=urn%3Aogc%3Adef%3Acrs%3AEPSG%3A%3A104905&d=&locale=&b=mars&e=-292.67577579055285%2C-165.76171565795272%2C292.67577579055285%2C165.76171565795278&sfz=&w='
+            "
+          >
+            Launch Interactive Map
+          </button>
+        </section>
+        <section class="locations">
+          <div class="loc-card">
+            <img src="../assets/Olympus Mons.svg" alt="Olympus Mons" />
+            <div class="text-wrapper">
+              <h4>Olympus Mons</h4>
+              <p class="description">
+                The largest volcano in the solar system, standing nearly three
+                times the height of Mount Everest with a base the size of
+                Arizona.
+              </p>
+              <button>Explore Location</button>
+            </div>
+          </div>
+          <div class="loc-card">
+            <img src="../assets/Valles Marineris.svg" alt="Valles Marineris" />
+            <div class="text-wrapper">
+              <h4>Valles Marineris</h4>
+              <p class="description">
+                A vast system of canyons that runs along the Martian equator,
+                stretching as long as the United States is wide.
+              </p>
+              <button>Explore Location</button>
+            </div>
+          </div>
+          <div class="loc-card">
+            <img src="../assets/Martian Poles.svg" alt="Martian Poles" />
+            <div class="text-wrapper">
+              <h4>Martian Poles</h4>
+              <p class="description">
+                The north and south poles of Mars feature ice caps made of water
+                and carbon dioxide ice that grow and shrink with the seasons.
+              </p>
+              <button>Explore Location</button>
+            </div>
+          </div>
+          <div class="loc-card">
+            <img src="../assets/Gale Crater.svg" alt="Gale Crater" />
+            <div class="text-wrapper">
+              <h4>Gale Crater</h4>
+              <p class="description">
+                Landing site of the Curiosity rover, this ancient crater shows
+                evidence of past lakes and streams on the Martian surface.
+              </p>
+              <button>Explore Location</button>
+            </div>
+          </div>
+          <div class="loc-card">
+            <img src="../assets/Jezero Crater.svg" alt="Jezero Crater" />
+            <div class="text-wrapper">
+              <h4>Jezero Crater</h4>
+              <p class="description">
+                Home to the Perseverance rover, this ancient lakebed contains a
+                river delta that may preserve signs of past microbial life.
+              </p>
+              <button>Explore Location</button>
+            </div>
+          </div>
+          <div class="loc-card">
+            <img src="../assets/Phobos & Deimos.svg" alt="Phobos & Deimos" />
+            <div class="text-wrapper">
+              <h4>Phobos & Deimos</h4>
+              <p class="description">
+                Mars' two small, irregularly shaped moons, likely captured
+                asteroids that orbit close to the planet's surface.
+              </p>
+              <button>Explore Location</button>
+            </div>
+          </div>
+        </section>
+        <section class="footer">
+          <button>Explore VR Tour</button>
+          <p>Compatible with most VR headsets and desktop browsers</p>
+        </section>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
